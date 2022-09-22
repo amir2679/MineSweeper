@@ -30,6 +30,11 @@ td {
     font-size: 40px;
 }
 
+.shown {
+    background-color: green;
+}
+
+
 /* .hide {
     display: none;
 } */

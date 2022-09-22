@@ -12,8 +12,8 @@ function renderBoard() {
             var className = (cell.isMine) ? 'mine' : ''
 
             var title =`Cell: ${i}, ${j}`
-            strHTML += `<td class="cell ${className} cell-${i}-${j}" title="${title}" 
-                            onclick="cellClicked(event, this, ${i}, ${j})" >
+            strHTML += `<td class="cell cell-${i}-${j}" title="${title}" 
+                            onclick="cellClicked(this, ${i}, ${j})" oncontextmenu="markCell(event, this, ${i}, ${j})">
                          </td>`
         }
         strHTML += `</tr>`
@@ -29,14 +29,14 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-function renderCell(location, value) {
-    // Select the elCell and set the value
-    const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
-    if(value = 'mine')
-        elCell.classList.add('.mine')
-    else
-        elCell.in
-}
+// function renderCell(location, value) {
+//     // Select the elCell and set the value
+//     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
+//     if(value = 'mine')
+//         elCell.classList.add('.mine')
+//     else
+//         elCell.in
+// }
 
 
 
@@ -51,11 +51,6 @@ function findRandEmptyCell(){
     }
     var randIdx = getRandomIntInclusive(0 , emptyCells.length -1)
     return emptyCells[randIdx]
-}
-
-function renderCell(location ,value){
-    const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
-    elCell.innerHTML = value
 }
 
 function showTimer() {
