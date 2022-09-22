@@ -51,6 +51,7 @@ function createBoard() {
             }
         }
     }
+    //put mines in random location on the board and saves them in array
     for (var i = 0; i < gLevel.MINES ; i++) {
         var randIdx = { i: getRandomIntInclusive(0, board.length - 1), j: getRandomIntInclusive(0, board.length - 1) }
         board[randIdx.i][randIdx.j].isMine = true
@@ -188,7 +189,7 @@ function isBoardEmpty() {
 
 
 function checkMines(minesIdxArr){
-    
+
 }
 
 // function clickEv(){
