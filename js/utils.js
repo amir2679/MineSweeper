@@ -38,6 +38,11 @@ function getRandomIntInclusive(min, max) {
 //         elCell.in
 // }
 
+function renderEmoji(emoji){
+    var elEmoji = document.querySelector('.emoji')
+    elEmoji.innerText = emoji
+}
+
 
 
 function findRandEmptyCell(){

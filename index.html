@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="init()">
-  <!-- <div class="levels">
-    <select name="" onchange="init(event.target.value)">
-      <option value="16">Easy</option>
-      <option value="25">Hard</option>
-      <option value="36">Extreme!</option>
-    </select>
-  </div> -->
+<body onload="init(4)">
+  <div class="difficulty">
+    <button onclick="playGame(this)">Easy</button>
+    <button onclick="playGame(this)">Hard</button>
+    <button onclick="playGame(this)">Extreme</button>
+    <button onclick="Restart(this)">Play Again!</button>
+  </div>
+  <div class="emoji"></div> 
   <table class="board">
     <tbody class="board-cells">
     </tbody>
@@ -24,6 +24,8 @@
   <div class="timer">
     Elapsed Time: <span></span>
   </div>
+  <h2>Lives:</h2>
+  <div class="end-modal"></div>
 
   <script src="js/main.js"></script>
   <script src="js/utils.js"></script>
