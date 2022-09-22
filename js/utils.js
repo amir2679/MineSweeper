@@ -13,7 +13,7 @@ function renderBoard() {
 
             var title =`Cell: ${i}, ${j}`
             strHTML += `<td class="cell cell-${i}-${j}" title="${title}" 
-                            onclick="cellClicked(this, ${i}, ${j})" oncontextmenu="markCell(event, this, ${i}, ${j})">
+                            onclick="cellClicked(event, this, ${i}, ${j})" oncontextmenu="markCell(event, this, ${i}, ${j})">
                          </td>`
         }
         strHTML += `</tr>`
@@ -70,7 +70,7 @@ function showTimer() {
       ms = '000' + ms
       ms = ms.substring(ms.length - 3, ms.length)
   
-      timer.innerText = `\n ${secs}:${ms}`
+      timer.innerText = `Timer : ${secs}:${ms}`
     }, 31)
   }
   
