@@ -1,13 +1,23 @@
 body {
     background: #111;
     color: white;
+    background-image: url("../pics/background.jpg");
+    background-size: 100%;
+}
+
+.main-layout{
+    margin: 20px 40px;
+}
+
+.game-layout{
+    display: flex;
+    justify-content: space-around;
 }
 
 .board {
-    padding-top: 60px;
-    width: 600px;
-    height: 600px;
-    margin: auto;
+    width: 500px;
+    height: 500px;
+    margin: auto 0;
 }
 
 table {
@@ -15,27 +25,38 @@ table {
 }
 
 .cell {
-    padding: 3px;
-    width: 35px;
-    height: 35px;
-    border: 1px solid gray;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
     background-color: gray;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
 }
 
-.mine {
-    background-color: red;
+.safe {
+    background-color: lightblue;
 }
-
+/* 
 td {
-    font-size: 40px;
-}
+    font-size: 20px;
+    text-align: center;
+} */
 
 .shown {
-    background-color: green;
+    background-color: rgb(78, 205, 78);
 }
 
 .end-modal{
-    font-size: 40px;
+    font-size: 30px;
+    display: inline;
+    margin: 0 auto;
+}
+
+.modal{
+    font-size: 20px;
+    display: inline;
+    margin: 0 auto;
 }
 
 
@@ -47,5 +68,61 @@ td {
     font-size: 40px;
     width: 40px;
     height: 40px;
-    margin: auto;
+    margin: 0 auto;
+    padding-left: 62px;
+}
+
+.lives{
+    color: rgb(203, 58, 58);
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 79px;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+.mines-add{
+    background-color: red;
+}
+
+/* .levels{
+    display: block;
+} */
+
+.show-txt{
+    color: black;
+}
+
+.play-again{
+    margin: 0 auto;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.features button{
+    text-align: center;
+}
+
+button{
+    box-shadow: 3px 3px;
+    background-color: salmon;
+    cursor: pointer;
+}
+
+button:active{
+    box-shadow: 2px 2px;
+}
+
+.head-layout{
+    display: flex;
+    justify-content: space-between;
+}
+
+.timer{
+    font-size: 30px;
 }

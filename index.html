@@ -10,24 +10,61 @@
 </head>
 
 <body onload="init(4)">
+  <div class="main-layout">
+    <div class="head-layout">
   <div class="difficulty">
-    <button onclick="playGame(this)">Easy</button>
-    <button onclick="playGame(this)">Hard</button>
-    <button onclick="playGame(this)">Extreme</button>
-    <button onclick="Restart(this)">Play Again!</button>
-    <button onclick="hint(this)">Hint</button>
+    <button class="levels" onclick="playGame(this)">Easy</button>
+    <button class="levels" onclick="playGame(this)">Hard</button>
+    <button class="levels" onclick="playGame(this)">Extreme</button>
+    <button class="play-again" onclick="Restart(this)">Play Again!</button>
   </div>
-  <div class="emoji"></div> 
+  <div class="timer show-txt">
+    <span></span>
+    </div>
+  </div>
+    <div class="end-modal show-txt"></div>
+  <div class="emoji"></div>
+  <div class="lives">❤ ❤ ❤</div>
+  <div class="modal show-txt"></div>
+  <div class="game-layout">
+    <div>
+  <table class="scores show-txt">
+    <tr>
+      <th colspan="3">Best Scores</th>
+    </tr>
+    <tr>
+      <td>Easy</td>
+      <td>Hard</td>
+      <td>Extreme</td>
+    </tr>
+    <tr>
+      <td class="easy"></td>
+      <td class="hard"></td>
+      <td class="extreme"></td>
+    </tr>
+  </table>
+</div>
   <table class="board">
     <tbody class="board-cells">
     </tbody>
   </table>
-  <div class="timer">
-  <span></span>
+  <div class="features">
+    <div class="hints">
+    <button class="hint1" onclick="hint(this)">💡</button>
+    <button class="hint2" onclick="hint(this)">💡</button>
+    <button class="hint3" onclick="hint(this)">💡</button>
   </div>
-  <h2>Lives: 3</h2>
-  <div class="end-modal"></div>
-
+    <button onclick="safeClick(this)">Safe Click</button>
+    <button onclick="megaHint()">MEGA HINT!</button>
+    <button onclick="switchMode(this)">Dark Mode</button>
+    <button onclick="manualyCreate()">Manualy Create</button>
+    <button onclick="sevenBoom()">7 BOOM!</button>
+    <button onclick="exterminator()">Exterminator</button>
+    <button onclick="undo()">Undo</button>
+  </div>
+</div>
+  <!-- <h2 class="lives">❤ ❤ ❤</h2> -->
+</div>
   <script src="js/main.js"></script>
   <script src="js/utils.js"></script>
 </body>

@@ -13,12 +13,12 @@ function renderBoard() {
 
             var title =`Cell: ${i}, ${j}`
             strHTML += `<td class="cell cell-${i}-${j}" title="${title}" 
-                            onclick="cellClicked(event, this, ${i}, ${j})" oncontextmenu="markCell(event, this, ${i}, ${j})">
+                            onclick="cellClicked(${i}, ${j})" oncontextmenu="markCell(event, this, ${i}, ${j})">
                          </td>`
         }
         strHTML += `</tr>`
     }
-     console.log(strHTML)
+    //  console.log(strHTML)
 
     const elCell = document.querySelector('.board-cells')
     elCell.innerHTML = strHTML
@@ -29,14 +29,6 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-// function renderCell(location, value) {
-//     // Select the elCell and set the value
-//     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
-//     if(value = 'mine')
-//         elCell.classList.add('.mine')
-//     else
-//         elCell.in
-// }
 
 function renderEmoji(emoji){
     var elEmoji = document.querySelector('.emoji')
@@ -61,7 +53,8 @@ function findRandEmptyCell(){
 function showTimer() {
     var timer = document.querySelector('.timer span')
     var start = Date.now()
-  
+    timer.classList.remove('hide')
+
       gtimerInterval = setInterval(function () {
       var currTs = Date.now()
   
@@ -70,13 +63,7 @@ function showTimer() {
       ms = '000' + ms
       ms = ms.substring(ms.length - 3, ms.length)
   
-      timer.innerText = `Timer : ${secs}:${ms}`
-    }, 31)
+      timer.innerText = `Timer: ${secs}.${ms}`
+    }, 41)
   }
   
-
-// function getRandIdx(){
-//     var rowIdx = getRandomIntInclusive(0 , gLevel.SIZE)
-//     var colIdx = getRandomIntInclusive(0 , gLevel.SIZE)
-//     return {i:rowIdx , j:colIdx}
-// }
