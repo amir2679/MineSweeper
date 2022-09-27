@@ -489,10 +489,14 @@ function expend(rowIdx, colIdx) {
 
     if (currCell.isMine) return
 
-    else if (currCell.isShown)
-        return
+    else if (currCell.isShown)  return
+    
+    else if(currCell.isMarked){
+        gGame.markedCount--
+        currCell.isMarked = false
+    }
 
-    else if (currCell.minesAroundCount === 0) {
+    if (currCell.minesAroundCount === 0) {
         currCell.isShown = true
 
         var elNum = document.querySelector(`.cell-${rowIdx}-${colIdx}`)
