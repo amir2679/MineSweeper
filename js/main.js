@@ -491,10 +491,7 @@ function expend(rowIdx, colIdx) {
 
     else if (currCell.isShown)  return
     
-    else if(currCell.isMarked){
-        gGame.markedCount--
-        currCell.isMarked = false
-    }
+    else if(currCell.isMarked)  return
 
     if (currCell.minesAroundCount === 0) {
         currCell.isShown = true
